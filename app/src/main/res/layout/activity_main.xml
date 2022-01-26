@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.customtoggletest.ToggleViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.example.customtoggletest.ToggleCustom
+            android:id="@+id/customTg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            isDisabled="@{vm.disabled}"
+            isSelected="@{vm.selected}"/>
+
+        <TextView
+            android:id="@+id/ToggleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.toggleText}"/>
+
+        <Button
+            android:id="@+id/disabledBt"
+            android:text="토글활성화유무"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk 31
+
+    //데이터 바인딩을 위해
+    dataBinding{
+        enabled=true
+    }
+
+    defaultConfig {
+        applicationId "com.example.customtoggletest"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    def lifecycle_version="2.2.0"
+    // ViewModel-라이프 사이클 관련임.
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    //LiveData-옵저버 패턴 관련된 것임.
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    //여기 위 두개 에서 사용한 변수 $lifecycle_version은
+    // def lifecycle_version="2.2.0" 이다.
+    //이렇게 변수화 시키므로써 뷰모델과 라이브데이터는 버전이 세트로 묶여다니게 됨을 알 수 있다.
+
+}
