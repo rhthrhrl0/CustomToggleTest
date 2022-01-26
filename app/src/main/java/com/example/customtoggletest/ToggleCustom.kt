@@ -148,7 +148,7 @@ class ToggleCustom @JvmOverloads constructor(
         }
     }
 
-    //확장함수. 얘네는 YDS-An
+    //확장함수. 얘네는 YDS-Anroid에서 가져옴.
     infix fun Context.dpToIntPx(dp: Float): Int {
         val displayMetrics = this.resources.displayMetrics
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, displayMetrics)
