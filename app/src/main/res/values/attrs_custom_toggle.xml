@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ToggleCustom">
+        <attr name="toggleSelected" format="boolean" />
+        <attr name="toggleDisabled" format="boolean" />
+    </declare-styleable>
+</resources>
+<!--이 커스텀토글뷰를 사용하는 개발자가 xml파일에서 직접 값을 지정가능하도록
+    해당 뷰에 대한 속성을 만든것이다.-->

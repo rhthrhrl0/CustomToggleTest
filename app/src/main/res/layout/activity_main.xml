@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -16,8 +17,10 @@
             android:id="@+id/customTg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            isDisabled="@{vm.disabled}"
-            isSelected="@{vm.selected}"/>
+            app:isDisabled="@{vm.disabled}"
+            app:isSelected="@{vm.selected}"/>
+            <!--이 경우는 뷰모델을 사용하므로 toggleSelected를 쓰지않고
+                뷰모델쪽에서 초기화를 진행함.-->
 
         <TextView
             android:id="@+id/ToggleTv"
@@ -32,6 +35,14 @@
             android:layout_height="wrap_content"
             />
 
+        <com.example.customtoggletest.ToggleCustom
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:toggleSelected="true"
+            app:toggleDisabled="true"
+        />
+        <!--뷰모델을 안쓰는 경우는 toggleSelected와 toggleDisabled를 사용 해서
+            초기화하면 됨-->
 
     </LinearLayout>
 
